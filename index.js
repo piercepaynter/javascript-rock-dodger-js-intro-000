@@ -150,7 +150,7 @@ function endGame() {
     rock.remove();
   });
   moveDodger.removeEventListener()
-  alert('YOU LOSE!')
+  alert('YOU LOSE!');
 }
 
 function moveDodger(e) {
