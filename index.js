@@ -103,17 +103,6 @@ function createRock(x) {
      * Otherwise, if the rock hasn't reached the bottom of
      * the GAME, we want to move it again.
      */
-     var rockTopNumbers = rock.style.top.replace('px', '')
-     var rockTop = parseInt(rockTopNumbers, 10)
-
-     if (rockTop > 40) {
-       var topNumbers = dodger.style.top.replace('px', '')
-       var top = parseInt(topNumbers, 10)
-
-       function step() {
-       dodger.style.top = `${top - 2}px`
-       }
-     }
     /**
      * But if the rock *has* reached the bottom of the GAME,
      * we should remove the rock from the DOM.
@@ -121,15 +110,13 @@ function createRock(x) {
      if (top <= GAME_HEIGHT) {
        rock.remove();
      }
-     /*
      else{
-       window.requestAnimationFrame(step)
+       window.requestAnimationFrame(moveRock)
      }
-     */
   }
 
   // We should kick off the animation of the rock around here.
-  window.requestAnimationFrame(step)
+  window.requestAnimationFrame(moveRock)
   // Add the rock to ROCKS so that we can remove all rocks
   // when there's a collision.
   ROCKS.push(rock)
