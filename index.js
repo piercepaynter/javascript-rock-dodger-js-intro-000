@@ -151,12 +151,13 @@ function moveDodger(e) {
    */
    document.addEventListener('keydown', function(e) {
      if (e.which === LEFT_ARROW) {
-     moveDodgerLeft()
+       
+       moveDodgerLeft()
    }
    })
    document.addEventListener('keydown', function(e) {
-  if (e.which === RIGHT_ARROW) {
-    moveDodgerRight()
+     if (e.which === RIGHT_ARROW) {
+       moveDodgerRight()
   }
   })
 }
